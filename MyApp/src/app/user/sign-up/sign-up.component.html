@@ -1,5 +1,5 @@
 <section id="register">
-    <div class="form">
+    <div class="form" >
       <h2>Sign Up</h2>
       <form class="register-form">
         <input
@@ -7,20 +7,23 @@
           name="email"
           id="register-email"
           placeholder="email"
+          [(ngModel)]="email"
         />
         <input
           type="password"
           name="password"
           id="register-password"
           placeholder="password"
+          [(ngModel)]="password"
         />
         <input
           type="password"
           name="re-password"
           id="repeat-password"
           placeholder="repeat password"
+          [(ngModel)]="repassword"
         />
-        <button type="submit">register</button>
+        <button type="submit" (click)="signUp()">register</button>
         <p class="message">Already registered? <a href="/SignIn">SignIn</a></p>
       </form>
     </div>
