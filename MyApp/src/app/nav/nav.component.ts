@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -16,4 +17,11 @@ export class NavComponent {
       map(result => result.matches),
       shareReplay()
     );
+
+    constructor(public authService: AuthService) { }
+
+    ngOnInit(): void {}
+
 }
+
+

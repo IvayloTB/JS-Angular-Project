@@ -18,6 +18,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { AuthService } from './shared/auth.service';
+import { LogOutComponent } from './user/log-out/log-out.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { UserComponent } from './user/user.component';
     SignInComponent,
     PageNotFoundComponent,
     UserComponent,
+    LogOutComponent,
+    
     
   ],
   imports: [
@@ -42,10 +48,10 @@ import { UserComponent } from './user/user.component';
     AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
-   
-    
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

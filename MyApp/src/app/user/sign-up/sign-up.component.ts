@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { AuthService } from '';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,37 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  email: string = '';
-  password: string = '';
-  repassword:string = '';
+  constructor(public authService: AuthService) { }
 
-  //constructor(private auth: AuthService){}
-
-ngOnInit(): void {
-}
-
-signUp() {
-  if (this.email == '') {
-    alert('Please enter email.')
-    return;
-  }
-
-  if (this.password == '') {
-    alert('Please enter password');
-    return;
-  }
-
-  if (this.repassword == '') {
-    alert('Please enter repassword');
-    return;
-  }
-  //this.auth.signUp(this.email, this.password);
-
-  this.email = '';
-  this.password = '';
-  this.repassword = '';
-}
-
+  ngOnInit(): void {}
 
 }
- 

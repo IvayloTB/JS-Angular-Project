@@ -1,14 +1,15 @@
 <section class="main">
   <header>
     <div class="navigation">
-      <a href="#">Home</a>
-      <a href="#">Posts</a>
-      <a href="#">Questions</a>
-      <a href="#">News</a>
+      <a href="home">Home</a>
+      <a href="">Posts</a>
+      <a href="">Questions</a>
+      <a href="">News</a>
     </div>
     <div class="user">
-      <a href="SignIn">Sign In</a>
+      <a href="/SignIn">Sign In</a>
       <a class="sign-up" href="/SignUp">Sign up</a>
+      <a class="logout"  (click)="authService.logOut()">Sign out</a>
     </div>
   </header>
   
