@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '../shared/auth.service';
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -18,9 +19,14 @@ export class NavComponent {
       shareReplay()
     );
 
-    constructor(public authService: AuthService) { }
+    constructor(public authService: AuthService,) { }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+   
+    }
+    get isLoggedIn(): boolean{
+      return this.authService.isLoggedIn   
+     }
 
 }
 

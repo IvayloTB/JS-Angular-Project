@@ -1,0 +1,22 @@
+
+ <div class="container-fluid">
+     <div style="display: flex; flex-wrap: wrap;"  clas="row">
+         <div class="hero" *ngFor="let i of newsDisplay" >
+             <div class="content" >
+                 <img src="{{i.urlToImage}}">
+                 <div class="desc">
+                     <h3>{{i.source.name}}</h3>
+                     <h2 class="title">{{i.title}}</h2>
+                     <p class="sub-title">
+                         {{i.description}}
+                        </p>
+                    </div>
+                    <div class="devider"></div>
+                    <div class="user">
+                        <a class="url" href="{{i.url}}">Read More</a>
+                        <p class="time">Date: {{i.publishedAt}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

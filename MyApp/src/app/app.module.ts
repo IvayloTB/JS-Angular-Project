@@ -17,11 +17,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserComponent } from './user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { AuthService } from './shared/auth.service';
 import { LogOutComponent } from './user/log-out/log-out.component';
+import { NewsComponent } from './news/news.component';
+import { NewsapiserviceService } from './news/newsapiservice.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,8 @@ import { LogOutComponent } from './user/log-out/log-out.component';
     SignUpComponent,
     SignInComponent,
     PageNotFoundComponent,
-    UserComponent,
     LogOutComponent,
+    NewsComponent,
     
     
   ],
@@ -48,10 +50,11 @@ import { LogOutComponent } from './user/log-out/log-out.component';
     AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
-  providers: [AuthService],
+  providers: [AuthService, NewsapiserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
