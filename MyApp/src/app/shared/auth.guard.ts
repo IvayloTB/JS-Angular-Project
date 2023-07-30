@@ -15,9 +15,7 @@ export class authGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     // Check the user is logged in or not
     //(In case the user is logged in he will have the access to pages that SecureInnerPage Guard have implimented 'Check app.routing.module.ts')
-    if(this.authService.isLoggedIn === true) {
-      this.router.navigate(['home']);
-    }
+    
      return true;
     }
 }

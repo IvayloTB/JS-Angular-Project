@@ -33,6 +33,13 @@ margin-right: 7em;
    border-radius: 5px;
 }
 
+.logout{
+  background-color: #ADE2DF;
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 footer{
   margin-top: auto;
   display: flex;

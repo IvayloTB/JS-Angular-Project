@@ -1,0 +1,29 @@
+<section id="create">
+    <div class="form">
+      <h2>Write post</h2>
+      <form class="create-form" >
+        <form #postForm="ngForm" (ngSubmit)="createPost(postForm.value)" >
+
+            <input
+            type="text"
+            name="title"
+            placeholder="Header"
+            ngModel/>
+            
+            <textarea
+            type="text"
+            name="description"
+            placeholder="Description"
+            rows="10"
+            cols="50"
+            ngModel
+            ></textarea>
+            
+            <button type="submit" >Post</button>
+            <div >
+                <button class="del" type="reset" >Delete All</button>
+            </div>
+        </form>
+      </form>
+    </div>
+  </section>

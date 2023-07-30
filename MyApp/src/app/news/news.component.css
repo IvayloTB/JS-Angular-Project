@@ -8,8 +8,11 @@
 
 .content img{
     max-width: 400px;
-    margin-bottom: 0px;
+    height: 250px;
+    margin-bottom: 1px;
 }
+
+
 
 .user img{
     display: block;
@@ -22,10 +25,7 @@
     
 }
 
-.hero .img2{
-    width: 400px;
-    height: 267px;
-}
+
 
 .hero{
     display: flex;
@@ -58,8 +58,16 @@ h2{
 
 .user{
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom: 5px;
+}
+
+.sub-content{
+    height: 250px;
 }
 
 .devider{

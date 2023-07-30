@@ -11,7 +11,8 @@ import {
   signInWithPopup,
   signOut,
   sendEmailVerification,
-  User
+  User,
+  user
 } from '@angular/fire/auth';
 
 @Injectable({
@@ -92,7 +93,8 @@ export class AuthService {
    //Logout
     logOut() {
       signOut(this.auth).then(()=>this.router.navigate(['/SignIn']))
-
+      console.log(this.UserData);
+      
 
     }
 

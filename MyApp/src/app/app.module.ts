@@ -24,6 +24,9 @@ import { AuthService } from './shared/auth.service';
 import { LogOutComponent } from './user/log-out/log-out.component';
 import { NewsComponent } from './news/news.component';
 import { NewsapiserviceService } from './news/newsapiservice.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { CreatepostComponent } from './createpost/createpost.component';
+import { PostspageComponent } from './postspage/postspage.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +38,8 @@ import { NewsapiserviceService } from './news/newsapiservice.service';
     PageNotFoundComponent,
     LogOutComponent,
     NewsComponent,
-    
-    
+    CreatepostComponent,
+    PostspageComponent, 
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import { NewsapiserviceService } from './news/newsapiservice.service';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
