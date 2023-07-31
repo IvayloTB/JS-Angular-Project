@@ -25,9 +25,11 @@
           name="re-password"
           id="repeat-password"
           placeholder="repeat password"
+          #userrePwd
+            required
           
         />
-        <button type="submit" (click)="authService.signUp(userEmail.value, userPwd.value)">register</button>
+        <button type="submit" (click)="authService.signUp(userEmail.value, userPwd.value, userrePwd.value)">register</button>
         <p class="message">Already registered? <a href="/SignIn">SignIn</a></p>
       </form>
     </div>

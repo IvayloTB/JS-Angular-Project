@@ -27,6 +27,7 @@ import { NewsapiserviceService } from './news/newsapiservice.service';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { PostspageComponent } from './postspage/postspage.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PostspageComponent } from './postspage/postspage.component';
     LogOutComponent,
     NewsComponent,
     CreatepostComponent,
-    PostspageComponent, 
+    PostspageComponent,
+    MyPostsComponent, 
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ export interface User {
   email: string;
   firstName: string;
   password: string;
+  userId:string;
 }
 
 const USER_KEY = '[user]';

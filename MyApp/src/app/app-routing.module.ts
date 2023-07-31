@@ -9,6 +9,7 @@ import { SecureInnerPageGuard } from './shared/secure-inner-page.guard';
 import { NewsComponent } from './news/news.component';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { PostspageComponent } from './postspage/postspage.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent, },
@@ -17,8 +18,10 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'create', component: CreatepostComponent, canActivate: [authGuard]},
   {path: 'posts', component:PostspageComponent, canActivate: [authGuard]},
+  {path: 'myposts',component: MyPostsComponent, canActivate: [authGuard]},
   { path: '**', component: PageNotFoundComponent },
-];
+]
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

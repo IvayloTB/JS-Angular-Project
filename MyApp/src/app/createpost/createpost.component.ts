@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
+import { Router } from '@angular/router';
+
 
 
 
@@ -11,12 +14,13 @@ import { Component } from '@angular/core';
 
 
 
-
 export class CreatepostComponent {
   
-  constructor(private http:HttpClient){}
-
-  createPost(postscr: {title:string, description:string}){
+  constructor(private http:HttpClient,private authService:AuthService,public router:Router){}
+  
+  
+  createPost(postscr: {title:string, description:string }){
+    const userId = this.authService.UserData.uid;
     if(postscr.title == "" || postscr.description == ""){
       if(postscr.title == "" && postscr.description == ""){
         alert('Header and Description reqired');
@@ -27,12 +31,14 @@ export class CreatepostComponent {
       }
     }else{
       this.http.post('https://angular-project-f5fdc-default-rtdb.firebaseio.com/posts.json', postscr)
-      .subscribe((res)=>{
-      })
+      .subscribe((res)=>{ })
+      this.http.post(`https://angular-project-f5fdc-default-rtdb.firebaseio.com/users/${userId}.json`, postscr)
+      .subscribe((res)=>{ })
       
     }
-    
-    
+    window.location.reload()
+    window.alert('Personal note created')
+  
   }
 
   

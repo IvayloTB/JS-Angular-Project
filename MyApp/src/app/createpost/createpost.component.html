@@ -1,6 +1,6 @@
 <section id="create">
     <div class="form">
-      <h2>Write post</h2>
+      <h2>Write personal note</h2>
       <form class="create-form" >
         <form #postForm="ngForm" (ngSubmit)="createPost(postForm.value)" >
 
@@ -20,9 +20,7 @@
             ></textarea>
             
             <button type="submit" >Post</button>
-            <div >
-                <button class="del" type="reset" >Delete All</button>
-            </div>
+            
         </form>
       </form>
     </div>
