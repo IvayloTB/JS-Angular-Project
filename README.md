@@ -1,5 +1,5 @@
 # JS-Angular-Project
- Making a aplication using Angular for SoftUni clases and later for personal CV-type like
+ Making a aplication using Angular
 
  The current state of the app is just the begining
 
