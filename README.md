@@ -1,4 +1,4 @@
-# JS-Angular-Project
+# Angular-Project
  Making a aplication using Angular
 
  The current state of the app is just the begining
